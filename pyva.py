@@ -10,8 +10,11 @@ while True:
     client = wolframalpha.Client(app_id)
     result = client.query(raw_input)
     # answer1 = next(result.results).text
-    lang = input("Which language do you feel comfortable with? ")
-    wikipedia.set_lang(lang[:2].upper())
+    lang = input("Which language do you feel comfortable with? ")[:2].upper()
+    if lang == "":
+        wikipedia.set_lang("ES")
+    else:
+        wikipedia.set_lang(lang)
     answer2 = wikipedia.summary(raw_input, sentences=3)
     # print(answer1)
     print(answer2)
