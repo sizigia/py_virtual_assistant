@@ -10,7 +10,10 @@ load_dotenv()
 
 
 class MainWindow(QMainWindow):
-    pass
+    def __init__(self, *args, **kwargs):
+        super(MainWindow, self).__init__(*args, **kwargs)
+
+        self.setWindowTitle("Python Virtual Assistant")
 
 
 app = QApplication(sys.argv)
