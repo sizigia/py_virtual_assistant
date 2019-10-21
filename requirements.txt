@@ -5,6 +5,8 @@ idna==2.8
 inflect==2.1.0
 jaraco.itertools==4.4.2
 more-itertools==7.2.0
+PyQt5==5.13.1
+PyQt5-sip==12.7.0
 python-dotenv==0.10.3
 requests==2.22.0
 six==1.12.0
