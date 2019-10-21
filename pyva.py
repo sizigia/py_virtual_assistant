@@ -15,6 +15,13 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Python Virtual Assistant")
 
+        label = QLabel(
+            "Hello, I am PyVA, the Python Virtual Assistant. How can I help you?")
+        label.setAlignment(Qt.AlignLeft)
+        label.setIndent(20)
+
+        self.setCentralWidget(label)
+
 
 app = QApplication(sys.argv)
 
