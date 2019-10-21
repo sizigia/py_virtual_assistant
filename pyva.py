@@ -1,8 +1,16 @@
 import os
+import sys
 import wolframalpha
 import wikipedia
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
 from dotenv import load_dotenv
 load_dotenv()
+
+app = QApplication(sys.argv)
+
+app.exec_()
 
 while True:
     raw_input = input("Whatcha wanna know: ")
@@ -13,7 +21,7 @@ while True:
         result = client.query(raw_input)
         answer1 = next(result.results).text
         print(answer1, '\n')
-    except pass:
+    except:
         # wikipedia
         lang = input("Which language do you feel comfortable with? ")[
             :2].upper()
