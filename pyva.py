@@ -8,7 +8,15 @@ from PyQt5.QtCore import *
 from dotenv import load_dotenv
 load_dotenv()
 
+
+class MainWindow(QMainWindow):
+    pass
+
+
 app = QApplication(sys.argv)
+
+window = MainWindow()
+window.show()
 
 app.exec_()
 
