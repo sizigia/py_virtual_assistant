@@ -29,7 +29,10 @@ class MainWindow(QMainWindow):
         self.button = QPushButton('Now search!', self)
         self.button.move(20, 80)
 
-
+    @pyqtSlot()
+    def on_click(self):
+        raw_input = self.textbox.text()
+        
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MainWindow()
@@ -37,7 +40,7 @@ if __name__ == '__main__':
     app.exec_()
 
 while True:
-    raw_input = input("Whatcha wanna know: ")
+    # raw_input = input("Whatcha wanna know: ")
     try:
         # wolframalpha
         app_id = os.getenv('WOLFRAM_ID')
