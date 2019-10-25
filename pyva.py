@@ -28,6 +28,8 @@ class MainWindow(QMainWindow):
 
         self.button = QPushButton('Now search!', self)
         self.button.move(20, 80)
+        self.button.clicked.connect(self.on_click)
+        self.show()
 
     @pyqtSlot()
     def on_click(self):
