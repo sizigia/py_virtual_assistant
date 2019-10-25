@@ -40,6 +40,12 @@ class MainWindow(QMainWindow):
             answer1 = next(result.results).text
             QMessageBox.question(self, 'Results:',
                                  f"You asked {raw_input}, apparently the answer is... " + answer1, QMessageBox.Ok, QMessageBox.Ok)
+            except StopIteration:
+                # wikipedia
+                wikipedia.set_lang("ES")
+                answer2 = wikipedia.summary(raw_input, sentences=3)
+                QMessageBox.question(self, 'Results:',
+                                     f"You asked {raw_input}, apparently the answer is... " + answer2, QMessageBox.Ok, QMessageBox.Ok)
 
 
 if __name__ == '__main__':
@@ -49,13 +55,13 @@ if __name__ == '__main__':
     app.exec_()
 
 while True:
-    except:
+
         # wikipedia
-        lang = input("Which language do you feel comfortable with? ")[
-            :2].upper()
-        if lang == "":
-            wikipedia.set_lang("ES")
-        else:
-            wikipedia.set_lang(lang)
-        answer2 = wikipedia.summary(raw_input, sentences=3)
-        print(answer2, '\n')
+    lang = input("Which language do you feel comfortable with? ")[
+        :2].upper()
+    if lang == "":
+        wikipedia.set_lang("ES")
+    else:
+        wikipedia.set_lang(lang)
+    answer2 = wikipedia.summary(raw_input, sentences=3)
+    print(answer2, '\n')
