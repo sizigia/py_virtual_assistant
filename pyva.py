@@ -21,6 +21,7 @@ class MainWindow(QMainWindow):
         label.setIndent(20)
 
         self.setCentralWidget(label)
+        self.textbox = QLineEdit(self)
 
 
 if __name__ == '__main__':
