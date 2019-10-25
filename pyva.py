@@ -46,6 +46,7 @@ class MainWindow(QMainWindow):
                 answer2 = wikipedia.summary(raw_input, sentences=3)
                 QMessageBox.question(self, 'Results:',
                                      f"You asked {raw_input}, apparently the answer is... " + answer2, QMessageBox.Ok, QMessageBox.Ok)
+            self.textbox.setText("")
 
 
 if __name__ == '__main__':
