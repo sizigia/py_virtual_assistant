@@ -23,6 +23,8 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(label)
         self.textbox = QLineEdit(self)
 
+        self.button = QPushButton('Now search!', self)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
