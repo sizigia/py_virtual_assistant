@@ -56,15 +56,3 @@ if __name__ == '__main__':
     window = MainWindow()
     window.show()
     app.exec_()
-
-while True:
-
-        # wikipedia
-    lang = input("Which language do you feel comfortable with? ")[
-        :2].upper()
-    if lang == "":
-        wikipedia.set_lang("ES")
-    else:
-        wikipedia.set_lang(lang)
-    answer2 = wikipedia.summary(raw_input, sentences=3)
-    print(answer2, '\n')
