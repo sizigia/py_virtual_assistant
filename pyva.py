@@ -32,7 +32,16 @@ class MainWindow(QMainWindow):
     @pyqtSlot()
     def on_click(self):
         raw_input = self.textbox.text()
-        
+        try:
+            # wolframalpha
+            app_id = os.getenv('WOLFRAM_ID')
+            client = wolframalpha.Client(app_id)
+            result = client.query(raw_input)
+            answer1 = next(result.results).text
+            QMessageBox.question(self, 'Results:',
+                                 f"You asked {raw_input}, apparently the answer is... " + answer1, QMessageBox.Ok, QMessageBox.Ok)
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MainWindow()
@@ -40,14 +49,6 @@ if __name__ == '__main__':
     app.exec_()
 
 while True:
-    # raw_input = input("Whatcha wanna know: ")
-    try:
-        # wolframalpha
-        app_id = os.getenv('WOLFRAM_ID')
-        client = wolframalpha.Client(app_id)
-        result = client.query(raw_input)
-        answer1 = next(result.results).text
-        print(answer1, '\n')
     except:
         # wikipedia
         lang = input("Which language do you feel comfortable with? ")[
