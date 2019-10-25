@@ -14,6 +14,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
 
         self.setWindowTitle("Python Virtual Assistant")
+        self.resize(550, 120)
 
         label = QLabel(
             "Hello, I am PyVA, the Python Virtual Assistant. How can I help you?")
@@ -22,8 +23,11 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(label)
         self.textbox = QLineEdit(self)
+        self.textbox.move(20, 20)
+        self.textbox.resize(500, 40)
 
         self.button = QPushButton('Now search!', self)
+        self.button.move(20, 80)
 
 
 if __name__ == '__main__':
