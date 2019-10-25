@@ -23,12 +23,11 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(label)
 
 
-app = QApplication(sys.argv)
-
-window = MainWindow()
-window.show()
-
-app.exec_()
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    app.exec_()
 
 while True:
     raw_input = input("Whatcha wanna know: ")
